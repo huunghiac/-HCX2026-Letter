@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>[HCX2026] END</title>
+    <!-- Thêm font chữ Serif thanh lịch và Sans-serif dễ đọc -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Screen 1: Authentication -->
+        <section id="screen-auth" class="screen active">
+            <div class="card glass">
+                <div class="logo-container">
+                    <img src="Logo tròn (1).png" alt="Logo" class="logo-img">
+                </div>
+                <h1>Xin chào,</h1>
+                <p>Vui lòng nhập Mã số sinh viên của bạn để nhận thư.</p>
+                <div class="input-group">
+                    <input type="text" id="student-id" placeholder="Mã số sinh viên (VD: 20520001)" autocomplete="off">
+                    <p id="error-message" class="error hidden">Mã số sinh viên không tồn tại hoặc chưa chính xác.</p>
+                </div>
+                <button id="btn-submit" class="btn primary">Xác nhận</button>
+            </div>
+        </section>
+
+        <!-- Screen 2: Bypass Autoplay (Envelope) -->
+        <section id="screen-envelope" class="screen hidden">
+            <div class="envelope-container">
+                <p id="envelope-hint" class="hint">Hữu Nghĩa gửi đến bạn</p>
+                <button id="btn-open" class="envelope-btn">
+                    <div class="envelope-icon">✉️</div>
+                    <span>Mở thư</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Screen 3: Letter & Music -->
+        <section id="screen-letter" class="screen hidden">
+            <div class="letter-paper">
+                <div class="letter-cover-container">
+                    <img id="cover-image" src="" alt="Cover Image">
+                    <button id="btn-prev-cover" class="cover-nav-btn prev" aria-label="Ảnh trước">❮</button>
+                    <button id="btn-next-cover" class="cover-nav-btn next" aria-label="Ảnh sau">❯</button>
+                </div>
+                <h2 id="recipient-name">Thân gửi,</h2>
+                <div class="letter-content">
+                    <p id="letter-text"></p>
+                </div>
+                <div class="signature">Hữu Nghĩa</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bg-audio" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
